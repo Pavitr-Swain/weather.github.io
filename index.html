@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+          background-image: url('pic.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          font-family: Arial, sans-serif;
+      }
+    </style>
+</head>
+<body>
+<div class="bird"></div>
+  </style>
+</head>
+</head>
+<body>
+
+  <div class="card">
+    <div class="search">
+  <input type="text" placeholder="enter city name"
+  spellcheck="false">
+ <button><img src="search.png"></button>  
+ </div>
+ 
+ <div class="error">
+  <p>invalid city name</p>
+ </div>
+<div class="weather">
+  <img src="rain.png" class="weather-icon">
+  <h1 class="temp">22°c</h1>
+  <h2 class="city">New York</h2>
+  <div class="details">
+  <div class="col">
+    <img src="humidity.png">
+   <div>
+     <p class="humidity">50%</p>
+     <p>humidity</p>
+</div>
+</div>
+<div class="col">
+  <img src="wind.png"><div>
+  <p class="wind">15km/h</p>
+  <p>wind speed</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const apikey ="367e85cbda89450f63035a8d30c0b885";
+  const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+  const searchBox = document.querySelector(".search input");
+  const searchBtn = document.querySelector(".search button");
+  const weatherIcon = document.querySelector(".weather-icon");
+
+
+  async function checkWeather(city){
+    const response = await fetch(apiUrl +city + `&appid=${apikey}`);
+
+    if(response.status == 404){
+    document.querySelector(".error").style.display = "block";
+    document.querySelector(".weather").style.display = "none";
+    }else{
+    var data = await response.json();
+
+   
+
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+
+    if(data.weather[0].main == "Clouds"){
+      weatherIcon.src ="clouds.png";
+    }
+   else if(data.weather[0].main == "clear"){
+      weatherIcon.src ="clear.png";
+  }
+  else if(data.weather[0].main == "snow"){
+      weatherIcon.src ="snow.png";
+  }
+ else if(data.weather[0].main == "mist"){
+      weatherIcon.src ="mist.png";
+ }
+ else if(data.weather[0].main == "drizzle"){
+      weatherIcon.src ="drizzle.png";
+ }
+
+ document.querySelector(".weather").style.display = "block";
+ document.querySelector(".error").style.display = "none";
+}
+}
+
+ searchBtn.addEventListener("click",()=>{
+  checkWeather(searchBox.value);
+ })
+
+
+</script>
+</body>
+
+</html>
