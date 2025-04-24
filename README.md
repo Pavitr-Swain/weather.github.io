@@ -19,7 +19,7 @@ style.css — all the styles live here
 
 .png files — icons for weather conditions
 
-.github/workflows/jekyll-gh-pages.yml — for auto-deploying via GitHub Actions
+
 
 🚀 Live Demo
 Just open this in your browser (if deployed):
