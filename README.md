@@ -1,4 +1,4 @@
-weather.github.io
+
 Hey there! This is a simple weather-themed web app built with plain old HTML & CSS — no frameworks, no JavaScript, just clean and minimal code.
 
 I made this mostly for fun and to play around with basic GitHub Pages deployment.
