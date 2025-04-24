@@ -1,29 +1,35 @@
+🌦️ Weather App
+This is a simple weather web app created using HTML and CSS, hosted via GitHub Pages. The app features a clean UI with weather icons for various conditions like rain, snow, mist, and more.
 
-Hey there! This is a simple weather-themed web app built with plain old HTML & CSS — no frameworks, no JavaScript, just clean and minimal code.
+🔧 Features
+View weather visuals like rain, mist, snow, etc.
 
-I made this mostly for fun and to play around with basic GitHub Pages deployment.
+User-friendly interface with responsive layout
 
-🔍 What’s Inside?
-A neat little weather UI 🌦️
+Fully static site – easy to host anywhere
 
-Custom icons for different conditions: rain 🌧️, snow ❄️, mist 🌫️, etc.
+Powered by simple HTML + CSS (no JavaScript)
 
-Static site — super lightweight and fast
+📁 File Structure
+bash
+Copy
+Edit
+.
+├── index.html         # Main HTML file
+├── style.css          # Styling for the app
+├── humidity.png       # Weather icons
+├── mist.png
+├── rain.png
+├── snow.png
+├── search.png
+├── pic.png
+├── .github/workflows  # GitHub Actions for deployment
+└── README.md          # You're reading it!
+🚀 Deployment
+This project is automatically deployed using GitHub Pages. Just push to the main branch and GitHub takes care of the rest.
 
-Hosted using GitHub Pages
-
-🗂️ Files Breakdown
-index.html — main page
-
-style.css — all the styles live here
-
-.png files — icons for weather conditions
-
-
-
-🚀 Live Demo
-Just open this in your browser (if deployed):
-📍  https://cheerful-boba-beba40.netlify.app/
+🔗 Live View:https://cheerful-boba-beba40.netlify.app/
 
 📄 License
-Open-source under the MIT License — feel free to use, remix, or improve it.
+This project is licensed under the MIT License.
+
